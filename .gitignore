@@ -1,0 +1,6 @@
+#bin files
+__pycache__/
+#virtual envirnonment folder
+venv/
+#ide files
+.idea/
