@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Help</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="{{ url_for('main') }}">Main page</a>
+                <a href="{{ url_for('search') }}">Search</a>
+                <a href="{{ url_for('help_') }}">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+
+        </div>
+    </footer>
+{% endblock %}

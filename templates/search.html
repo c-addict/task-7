@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Search</title>
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="{{ url_for('main') }}">Main page</a>
+                <a href="{{ url_for('search') }}">Search</a>
+                <a href="{{ url_for('help_') }}">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <form method="post" action="{{ url_for('search') }}">
+                <input type="text">
+                <input type="submit">
+            </form>
+            <div class="files-container">
+                {% for file in files %}
+                    <div class="file-container">
+                        <p>File</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+
+        </div>
+    </footer>
+{% endblock %}
