@@ -4,3 +4,5 @@ __pycache__/
 venv/
 #ide files
 .idea/
+#pytest cached files
+.pytest_cache/
