@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
+from utils.fileutils import search_files
+import json
 
 
 app = Flask(__name__)
@@ -14,7 +16,18 @@ def search():
     if request.method == 'GET':
         return render_template('search.html')
     else:
-        return render_template('search.html', files=[])
+        file_name = request.form['filename']
+        with open('json/dirs.json') as dirs_json:
+            dirs = json.load(dirs_json)
+        found_files = search_files(file_name, dirs)
+        return render_template('search.html', files=found_files)
+
+
+@app.route('/download/<path:path_to_file>/<file_name>')
+def download_file(path_to_file, file_name):
+    root = '/'
+    path = root + path_to_file
+    return send_from_directory(directory=path, filename=file_name)
 
 
 @app.route('/help/')
