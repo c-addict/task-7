@@ -18,13 +18,16 @@
     <main>
         <div class="main-container">
             <form method="post" action="{{ url_for('search') }}">
-                <input type="text">
+                <input type="text" name="filename">
                 <input type="submit">
             </form>
             <div class="files-container">
                 {% for file in files %}
                     <div class="file-container">
-                        <p>File</p>
+                        <img src="/static/images/file.png">
+                        <p>
+                            <a href="{{ url_for('download_file', path_to_file=file[1], file_name=file[0])}}" download>{{ file[0] }}</a>
+                        </p>
                     </div>
                 {% endfor %}
             </div>

@@ -15,6 +15,7 @@ def search_files(pattern: str, dirs=None) -> set:
     for path in dirs:
         for root, directory, files in os.walk(path):
             if pattern in files:
-                found_files.add((pattern, os.path.join(root, pattern)))
+                print(root)
+                found_files.add((pattern, root))
     return found_files
 
