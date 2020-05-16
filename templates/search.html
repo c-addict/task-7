@@ -24,6 +24,10 @@
                     <input type="submit">
                 </form>
             </div>
+            <form method="post" action="{{ url_for('search') }}">
+                <input type="text" name="filename">
+                <input type="submit">
+            </form>
             <div class="files-container">
                 {% for file in files %}
                     <div class="file-container">

@@ -1,4 +1,8 @@
 from flask import Flask, render_template, request, send_from_directory
+<<<<<<< HEAD
+=======
+import os
+>>>>>>> e504aea8b39f015feaae3d65c98770087ee2d6ac
 from utils.fileutils import search_files
 import json
 
@@ -25,9 +29,14 @@ def search():
 
 @app.route('/download/<path:path_to_file>/<file_name>')
 def download_file(path_to_file, file_name):
+<<<<<<< HEAD
     root = '/'
     path = root + path_to_file
     return send_from_directory(directory=path, filename=file_name)
+=======
+    print(path_to_file, file_name)
+    return send_from_directory(directory='/' + path_to_file, filename=file_name)
+>>>>>>> e504aea8b39f015feaae3d65c98770087ee2d6ac
 
 
 @app.route('/help/')
