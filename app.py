@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, redirect
 from utils.fileutils import search_files
 import json
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return render_template('index.html')
+    return redirect('/search/')
 
 
 @app.route('/search/', methods=['GET', 'POST'])
@@ -28,11 +28,6 @@ def download_file(path_to_file, file_name):
     root = '/'
     path = root + path_to_file
     return send_from_directory(directory=path, filename=file_name)
-
-
-@app.route('/help/')
-def help_():
-    return render_template('help.html')
 
 
 if __name__ == '__main__':

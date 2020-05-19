@@ -7,6 +7,8 @@
 {% block body %}
     <header>
         <div class="header-container">
+            <img src="/static/images/logo.png" alt="logo">
+            <h1>Cloud search</h1>
         </div>
     </header>
 
@@ -16,7 +18,7 @@
                 <form method="post" action="{{ url_for('search') }}">
                     <label for="filename">File name:</label>
                     <input type="text" name="filename">
-                    <input type="submit">
+                    <input class="search-button" type="submit">
                 </form>
             </div>
             <div class="files-container">

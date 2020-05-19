@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+}
+
+.header-container {
+    display: flex;
+}
+
+.header-container h1 {
+    color: aliceblue;
+    margin-left: 1em;
+    font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+}
+
+.form-container {
+    margin: 1em;
+}
+
+.form-container label {
+    color: aliceblue;
+    font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+}
+
+.form-container input {
+    background-color: bisque;
+    font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+}
+
+
+.files-container {
+    display: flex;
+    margin: 1em;
+}
+
+.file-container a {
+    font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.file-container {
+    margin: 1em;
+}
